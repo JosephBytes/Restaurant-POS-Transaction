@@ -1,16 +1,8 @@
 package fastfoodkitchen;
-
-// import java.io.FileNotFoundException;  //used for csvfile 
-// import java.io.IOException;
-// import java.io.File;
-// import java.io.PrintWriter;
-// import java.io.FileOutputStream;
 import java.util.*;
 import java.io.*;
 
 /**
- *
- * ITSC 1213 
  * @author Joseph Abdulwahab
  */
 
