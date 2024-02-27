@@ -6,7 +6,6 @@ import java.util.ArrayList;
  *
  * ITSC 1213 
  * @author Joseph Abdulwahab
- * @date 2/14/2023
  */
 
 public class FastFoodKitchen {

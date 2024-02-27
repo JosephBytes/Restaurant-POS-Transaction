@@ -18,7 +18,7 @@ public class FastFoodKitchenDriver {
     public static void main(String[] args) throws FileNotFoundException, IOException{  
         FastFoodKitchen kitchen = new FastFoodKitchen();
         try{
-            Scanner fileScanner = new Scanner(new File("src/fastfoodkitchen/burgerOrder2.csv"));
+            Scanner fileScanner = new Scanner(new File("src/fastfoodkitchen/BurgerOrdersExportCSV.csv"));
             fileScanner.nextLine(); //ignore the headerline of csv
             while(fileScanner.hasNextLine()){
                 String line = fileScanner.nextLine();
@@ -193,7 +193,7 @@ public class FastFoodKitchenDriver {
                     break;
                 case 7:
                     try{
-                        FileOutputStream fs = new FileOutputStream("BurgerOrdersExport.txt");
+                        FileOutputStream fs = new FileOutputStream("BurgerOrdersExportCSV.txt");
                         PrintWriter ps = new PrintWriter(fs);
                         ps.println("orderID,numHamburgers,numCheeseburgers,numVeggieburgers,numSodas,toGo");
                         for(int i = 0; i < kitchen.getOrderList().size(); i++){
