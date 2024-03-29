@@ -1,19 +1,8 @@
 package fastfoodkitchen;
-
-import java.util.ArrayList;
-
-/**
- *
- * ITSC 1213 
- * @author Joseph Abdulwahab
- */
-
+import java.util.*;
 public class FastFoodKitchen {
-
     private ArrayList<BurgerOrder> orderList = new ArrayList();
-
     private static int nextOrderNum = 1;
-
     FastFoodKitchen() {//Hardcoded removed, sourced from csv file instead
 //        orderList.add(new BurgerOrder(3, 15, 4, 10, false, getNextOrderNum()));
 //        incrementNextOrderNum();
@@ -35,7 +24,7 @@ public class FastFoodKitchen {
         int orderNum = getNextOrderNum();
         orderList.add(new BurgerOrder(ham, cheese, veggie, soda, toGo, orderNum));
         incrementNextOrderNum();
-//        orderCallOut(orderList.get(orderList.size() - 1));
+        orderCallOut(orderList.get(orderList.size() - 1));
         return orderNum;
 
     }
@@ -64,12 +53,10 @@ public class FastFoodKitchen {
     }
 
     public boolean cancelLastOrder() {
-
         if (!orderList.isEmpty()) { // same as  if (orderList.size() > 0) 
             orderList.remove(orderList.size() - 1);
             return true;
         }
-
         return false;
     }
 
@@ -86,7 +73,6 @@ public class FastFoodKitchen {
         if (order.getNumSodas() > 0) {
             System.out.println("You have " + order.getNumSodas() + " sodas");
         }
-
     }
 
     public void completeSpecificOrder(int orderID) {
@@ -99,16 +85,13 @@ public class FastFoodKitchen {
                 orderList.remove(i);
             }
         }
-
     }
 
     public void completeNextOrder() {
         int nextOrder = orderList.get(0).getOrderNum();
         completeSpecificOrder(nextOrder);
-
     }
-
-    // Part 2
+    
     public ArrayList<BurgerOrder> getOrderList() {
         return orderList;
     }
@@ -121,22 +104,6 @@ public class FastFoodKitchen {
         }
         return -1;
     }
-
-//    public int findOrderBin(int whatWeAreLookingFor) {
-//        int left = 0;
-//        int right = orderList.size() - 1;
-//        while (left <= right) {
-//            int middle = (left + right) / 2;
-//            if (whatWeAreLookingFor < orderList.get(middle).getOrderNum()) {
-//                right = middle - 1;
-//            } else if (whatWeAreLookingFor > orderList.get(middle).getOrderNum()) {
-//                left = middle + 1;
-//            } else {
-//                return middle;
-//            }
-//        }
-//        return -1;
-//    }
 
   public int findOrderBin(int orderID){
         int left = 0;
@@ -154,8 +121,8 @@ public class FastFoodKitchen {
             }
         }
         return -1;
-        
     }
+    
     public void selectionSort(){
         for (int i = 0; i< orderList.size()-1; i++){
             int minIndex = i;
@@ -181,22 +148,4 @@ public class FastFoodKitchen {
             orderList.set(possibleIndex, temp);
         }
     }
-    
-//    public void selectionSort() { //weird method!
-//
-//        for (int j = 0; j < orderList.size() - 1; j++) {
-//            int minIndex = j;
-//            for (int k = j + 1; k < orderList.size(); k++) {
-//
-//                 if (orderList.get(minIndex).getTotalBurgers() > orderList.get(j).getTotalBurgers()){
-//                    minIndex = k;
-//                }
-//            }
-//            BurgerOrder temp = orderList.get(j);
-//            orderList.set(j, orderList.get(minIndex));
-//            orderList.set(minIndex, temp);
-//
-//        }
-//    }
-
 }
