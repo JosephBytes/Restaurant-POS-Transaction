@@ -2,10 +2,6 @@ package fastfoodkitchen;
 import java.util.*;
 import java.io.*;
 
-/**
- * @author Joseph Abdulwahab
- */
-
 public class FastFoodKitchenDriver {
     public static void main(String[] args) throws FileNotFoundException, IOException{  
         FastFoodKitchen kitchen = new FastFoodKitchen();
@@ -31,7 +27,7 @@ public class FastFoodKitchenDriver {
         
         while (kitchen.getNumOrdersPending() != 0) { 
         int num = -1;
-            //Extra credit attempt - Random holiday coupon sale implementation 
+            // Random holiday coupon sale implementation 
             int randomItemForSale = (int) (Math.random() *5); // 0 - 4 
             int randomDiscount = (int) ((Math.random() * 75) + 10); //10 - 75
             String a = "";
